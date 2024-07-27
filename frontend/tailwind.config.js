@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily: {
         ubuntu:  ["Ubuntu", "sans-serif"]
+    },
+    size: {
+      '15': '3.8rem'
     }
   },
   },

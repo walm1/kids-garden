@@ -2,12 +2,13 @@ import Footer from "../components/Footer"
 import Form from "../components/Form"
 import Navbar from "../components/Navbar"
 import portrait from '../assets/portrait.png'
+import { Fade } from 'react-awesome-reveal'
 
 export default function MainPage({page}){
     return(
         <>
         <Navbar/>
-        <div className="flex flex-col min-h-[100vh]">
+        <div className="flex flex-col min-h-[100vh] mt-[150px]">
             <div className="flex justify-center items-center mt-[20px]">
                 <img src={portrait} alt="anuncio" className="rounded-2xl"/>
             </div>
@@ -29,8 +30,7 @@ export default function MainPage({page}){
                 </h2>
             </section>
         </div>
-        <Form />
-        <Footer />
+            <Footer />
         </>
     )
 }

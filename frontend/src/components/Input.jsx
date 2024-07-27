@@ -4,13 +4,14 @@ export default function InputDefault({type, name, text, method}){
            {
             type != "select" ?
             <input onChange={method} className="
-            shadow-sm
-            shadow-[#90b3ff]
+            border-gray-200
+            border-2 
+            border-solid
             p-[5px]
             w-[90%]
+            h-[50px]
             rounded-lg
             text-[14px]
-            border-none
             focus:outline-1
             focus:outline
             focus:outline-black
@@ -20,14 +21,15 @@ export default function InputDefault({type, name, text, method}){
         <select onChange={method} className="
             p-[5px]
             w-[90%]
+            h-[50px]
             rounded-lg
             text-[14px]
-            border-none
+            border-gray-200
+            border-2 
+            border-solid
             bg-white
-            shadow-sm
-            shadow-[#90b3ff]
         " name="classes">
-            <option value=""></option>
+            <option value="">Grado de interés</option>
             <option value="Pre-primaria">Pre-primaria</option>
             <option value="Primaria">Primaria</option>
             <option value="Basicos">Básicos</option>

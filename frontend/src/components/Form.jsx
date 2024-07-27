@@ -37,9 +37,9 @@ export default function Form(){
     const handleSubmit = async() =>{
         if(!name || !email || !tel || !level
             || name.length == 0 || email.length == 0 || tel.length == 0 || level.length == 0
-        ) return toast.error('Faltan datos en el formulario', {autoClose: 1500, hideProgressBar: true})
+        ) return toast.error('Faltan datos en el formulario', {position:'bottom-right',autoClose: 1500, hideProgressBar: true})
 
-        toast.success('Enviado correctamente', {autoClose: 1500})
+        toast.success('Enviado correctamente', {position:'bottom-right',autoClose: 1500})
         return await fetch('http://localhost:3000/send-mail', {
             method: "POST",
             headers: {
@@ -52,10 +52,11 @@ export default function Form(){
     return(
         <>
         <div className="
+        font-ubuntu
         flex    
         w-[100%]
-        h-[350px]
-        items-end
+        h-[100%]
+        items-start
         justify-center
         mb-[20px]
         ">
@@ -64,64 +65,52 @@ export default function Form(){
             flex-col
             items-center
             justify-center
-            w-[60%]
-            h-[330px]
-            bg-[#195e9b]
+            w-[90%]
+            h-[500px]
+            bg-white
             rounded-xl
-            mt-auto
+            shadow-
+            shadow-[#7e7e7e]
+            shadow-2xl
             ">
-                <div className="flex mb-[20px] top-20 text-white font-extrabold text-lg">
-                    <h1>¿Necesitas más información?</h1>
+                <div className="flex flex-col justify-start w-[80%] items-start h-[15%]">
+                    <h1 className="text-lg font-bold">
+                    ¿Tienes preguntas?
+                    </h1>
+                    <h2>Escribenos y nos comunicaremos contigo.</h2>
                 </div>
-                <div className="flex w-[100%]">
-                    <div className="
-                    flex
-                    flex-col
-                    text-white
-                    font-extrabold
-                    gap-5
-                    w-[50%]
-                    justify-center
-                    items-center
-                    ">
-                        <label htmlFor="name">Nombre completo:</label>
-                        <label htmlFor="email">Correo electrónico:</label>
-                        <label htmlFor="tel">Teléfono:</label>
-                        <label htmlFor="level">Plan de estudio de interés: </label>
-                    </div>
                     <div className="
                     flex
                     flex-col
                     gap-3
-                    w-[50%]
-                    justify-start
+                    w-[80%]
+                    justify-center
                     items-start
                     ">
-                        <InputDefault method={handleName} type={"text"} name={"name"} text={"Ejemplo: Marcos López"}/>
-                        <InputDefault method={handleEmail} type={"email"} name={"email"} text={"ejemplo@ejemplo.com"}/>
-                        <InputDefault method={handleTel} type={"tel"} name={"tel"} text={"Ejemplo: 12981045"} />              
+                        <InputDefault method={handleName} type={"text"} name={"name"} text={"Nombre"}/>
+                        <InputDefault method={handleEmail} type={"email"} name={"email"} text={"Correo Electrónico"}/>
+                        <InputDefault method={handleTel} type={"tel"} name={"tel"} text={"Teléfono"} />              
                         <InputDefault method={handleLevel} type={"select"} name={"level"} />
                     </div>
-                </div>
-                <div className="flex justify-center items-center flex-row h-[50px] bottom-6 mt-[20px]">
+                    <div className="flex justify-start items-center w-[80%] mt-[10px]">
                     <button onClick={handleSubmit} title="Enviar información" className="
-                    transition
-                    ease-linear
-                    duration-200
-                    text-white 
-                    bg-[#1874c3]
-                    w-[90px]
-                    h-[40px]
-                    border-[2px]
+                    border-black
+                    border-[1px]
+                    transition-all
+                    ease-in-out
+                    duration-100
+                    text-black 
+                    w-[90%]
+                    h-[45px]
                     border-solid
-                    border-white
                     rounded-2xl
-                    active:bg-[#5aa2e0d5] active:w-[95px] active:h-[45px]
+                    active:text-[18px]
+                    hover:bg-gray-200
                     "
                     >Enviar</button>
                 </div>
+                </div>
             </div>
-        </div>
         </>
     )
 }

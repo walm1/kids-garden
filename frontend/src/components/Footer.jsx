@@ -23,7 +23,7 @@ export default function Footer(){
             pauseOnHover: false
         })
 
-        window.open('https://www.facebook.com/colegioligadevidanueva')
+        window.open('https://wa.link/vz5az1')
     }
 
     const handleMail = () =>{
