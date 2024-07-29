@@ -58,7 +58,7 @@ export default function Form(){
         h-[100%]
         items-start
         justify-center
-        mb-[20px]
+        mb-[40px]
         ">
             <div className="
             flex
@@ -66,14 +66,14 @@ export default function Form(){
             items-center
             justify-center
             w-[90%]
-            h-[500px]
+            h-[100%]
             bg-white
             rounded-xl
             shadow-
             shadow-[#7e7e7e]
             shadow-2xl
             ">
-                <div className="flex flex-col justify-start w-[80%] items-start h-[15%]">
+                <div className="flex mb-[15px] flex-col justify-start w-[80%] items-start">
                     <h1 className="text-lg font-bold">
                     ¿Tienes preguntas?
                     </h1>

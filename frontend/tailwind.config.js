@@ -11,6 +11,9 @@ export default {
     },
     size: {
       '15': '3.8rem'
+    },
+    animation: {
+      'slide': 'slide 1s linear infinite'
     }
   },
   },

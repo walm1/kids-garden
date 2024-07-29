@@ -71,12 +71,12 @@ export default function Navbar(){
               ))}
             </div>
 
-            <div className='flex md:hidden items-center justify-end w-[85%] mr-[20px]'>
+            <div className='flex md:hidden items-center justify-end w-[85%] mr-[10px]'>
                 {nav ? <AiOutlineClose className='hover:cursor-pointer' onClick={handleNav} color='white' size={40}/> : <AiOutlineMenu className='hover:cursor-pointer' onClick={handleNav} color='white' size={50} />}
             </div>
 
             <div className={
-                nav ? 'shadow-xl shadow-[#242e68] bg-[#195e9b]  fixed md:hidden left-0 top-0 h-full w-[60%] ease-in-out duration-200'
+                nav ? 'shadow-xl shadow-[#242e68] bg-[#195e9b]  fixed md:hidden left-0 top-0 h-full w-[70%] ease-in-out duration-200'
             : 'ease-in-out w-[60%] fixed top-0 bottom-0 left-[-100%] duration-200'}>
 
                 <div className='flex mt-[50px] flex-col h-[100%] items-start'>
@@ -88,7 +88,7 @@ export default function Navbar(){
                             <NavLink
                             style={({ isActive }) => {
                                 return {
-                                  color: isActive ? "rgb(190, 203, 255)" : "white",
+                                  color: isActive ? "rgb(190, 300, 255)" : "white",
                                 };
                             }}
                             className={"flex text-white text-xl"}
