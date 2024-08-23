@@ -33,8 +33,6 @@ export default function InputDefault({type, name, text, method}){
             <option value="Pre-primaria">Pre-primaria</option>
             <option value="Primaria">Primaria</option>
             <option value="Basicos">Básicos</option>
-            <option value="Programa Matemática Saxon">Programa Matemática Saxon</option>
-            <option value="Diversificado">Diversificado</option>
         </select>
         }
         </>

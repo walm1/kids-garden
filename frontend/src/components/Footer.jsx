@@ -1,4 +1,4 @@
-import logo from '../assets/logo1.png'
+import logo from '../assets/kids_garden_logo.png'
 import { FaFacebookSquare, FaWhatsappSquare } from 'react-icons/fa'
 import { FaSquareEnvelope } from "react-icons/fa6";
 import { IconContext } from 'react-icons'
@@ -13,7 +13,7 @@ export default function Footer(){
             pauseOnHover: false
         }) 
 
-        window.open('https://www.facebook.com/colegioligadevidanueva')
+        window.open('https://www.facebook.com/colegioKG')
     }
 
     const handleWhastapp = () =>{
@@ -23,7 +23,7 @@ export default function Footer(){
             pauseOnHover: false
         })
 
-        window.open('https://wa.link/vz5az1')
+        // window.open('https://wa.link/vz5az1')
     }
 
     const handleMail = () =>{
@@ -33,19 +33,19 @@ export default function Footer(){
             pauseOnHover: false
         })
 
-        window.open('https://mail.google.com/mail/u/0/?pli=1#inbox?compose=GTvVlcSMTDxFvbhWdZHfltQldjzrksPRHNrLNrhJhNzbTvCVlTKKTcHvpQBldmZdkRRhBrMhwXrXs')
+        //window.open('https://mail.google.com/mail/u/0/?pli=1#inbox?compose=GTvVlcSMTDxFvbhWdZHfltQldjzrksPRHNrLNrhJhNzbTvCVlTKKTcHvpQBldmZdkRRhBrMhwXrXs')
     }
 
     return(
         <div className='
         flex
         w-[100%]
-        bg-[#195e9b]
+        bg-[#2c9928]
         bottom-0
         h-[150px]
         '>
-            <div className='flex w-[30%] items-center justify-center'>
-                <img src={logo} alt="logo colegio liga de vida nueva" className='w-[250px] h-[90px]'/>
+            <div className='flex w-[30%] h-[100%] items-center justify-center'>
+                <img src={logo} alt="Kids garden" className='flex w-[150px] h-[150px]'/>
             </div>
 
             <div className='flex w-[70%] flex-col justify-center items-center'>
@@ -61,9 +61,9 @@ export default function Footer(){
                     </IconContext.Provider>
                 </div>
                 <div className='flex flex-col text-white w-[100%] h-[65%] items-center mt-[5px]'>
-                    <h3 className='font-bold text-center'>5a. Calle 15-20 Zona 4</h3>
-                    <h3 className='font-bold text-center'>Colonia Los Angeles, Villa nueva</h3>
-                    <h3 className='font-bold text-center'>Tel: 6627-8010</h3>
+                    <h3 className='font-bold text-center'>22 Calle 6 - 03</h3>
+                    <h3 className='font-bold text-center'>Fuentes del Valle 2, Villa Nueva</h3>
+                    <h3 className='font-bold text-center'>Tel: 6640 4530</h3>
                 </div>
             </div>       
         </div>

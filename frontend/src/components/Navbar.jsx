@@ -1,21 +1,26 @@
 import { useState } from 'react';
-import logo from '../assets/logo.png'
+import logo from '../assets/kids_garden_logo.png'
 import {Link, NavLink} from 'react-router-dom'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 export default function Navbar(){
     const [nav, setNav] = useState(false)
+    const [over, setOver] = useState(false)
 
     const handleNav = ()=>{
         setNav(!nav)
     }
 
+    const handleOver = () =>{
+        setOver(!over)
+    }
+
     const navItems = [
         {id: 1, text: "Inicio", path: "/"},
         {id: 2, text: "Nosotros", path: "/nosotros"},
-        {id: 3, text: "Contáctanos", path: "/contacto"},
-        {id: 4, text: "Planes de estudio", path: "/planes"},
+        {id: 3, text: "Contáctanos", path: "/contacto"}
     ]
+
     return(
         <div 
         className="
@@ -26,7 +31,9 @@ export default function Navbar(){
         md:h-[150px] 
         h-[110px]
         w-[100%]
-        bg-[#195e9b]
+        bg-[#2c9928]
+        rounded-br-2xl
+        rounded-bl-2xl
         ">
             <div className='
             flex
@@ -58,9 +65,13 @@ export default function Navbar(){
             '>
               {navItems.map(item =>(
                 <NavLink 
+                onMouseOver={over == true ? handleOver : ''}
                 style={({ isActive }) => {
                     return {
-                      color: isActive ? "rgb(190, 300, 255)" : "white",
+                      color: isActive ? "#ff951c" : "white",
+                      textDecorationLine: isActive ? 'underline' : 'none',
+                      textDecorationThickness: '1px',
+                      textUnderlineOffset: '6px',
                     };
                 }}
             className='transition-all
@@ -69,6 +80,53 @@ export default function Navbar(){
             hover:text-[19px]
             hover:text-[#e9e6e6]' to={item.path} key={item.id} >{item.text}</NavLink>
               ))}
+
+              <div 
+            onClick={handleOver}
+            className='flex flex-col'>
+                <h1 
+                className='transition-all
+                duration-200
+                ease-in-out
+                hover:text-[19px]
+                hover:text-[#fff]'>
+                    Más
+                </h1>
+                <div onMouseLeave={handleOver} className={over ? 'flex fixed flex-col w-[200px] rounded-xl shadow-2xl mt-[60px] ml-[-150px] bg-[#5aac3f]' : 'hidden'}>
+                <NavLink 
+                to={'/plans'}
+                style={({ isActive }) => {
+                    return {
+                      color: isActive ? "#ff951c" : "white",
+                      textDecorationLine: isActive ? 'underline' : 'none',
+                      textDecorationThickness: '1px',
+                      textUnderlineOffset: '6px',
+                    };
+                }}
+            className='transition-all
+            duration-200
+            p-2
+            ease-in-out
+            hover:text-[18.5px]
+            hover:text-[#e9e6e6]'>Planes de estudio</NavLink>
+            <NavLink 
+                to={'/noticias'}
+                style={({ isActive }) => {
+                    return {
+                      color: isActive ? "#ff951c" : "white",
+                      textDecorationLine: isActive ? 'underline' : 'none',
+                      textDecorationThickness: '1px',
+                      textUnderlineOffset: '6px',
+                    };
+                }}
+            className='transition-all
+            p-2
+            duration-200
+            ease-in-out
+            hover:text-[18.5px]
+            hover:text-[#e9e6e6]'>Noticias</NavLink>
+                </div>
+              </div>
             </div>
 
             <div className='flex md:hidden items-center justify-end w-[85%] mr-[10px]'>

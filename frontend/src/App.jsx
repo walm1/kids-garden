@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact';
-import Plans from './pages/Plans';
+import News from './pages/News';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path='/' element={<MainPage />}/>
           <Route path='/nosotros' element={<AboutUs />} />
           <Route path='/contacto' element={<Contact />} />
-          <Route path='/planes' element={<Plans />} />
+          <Route path='/noticias' element={<News />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer />

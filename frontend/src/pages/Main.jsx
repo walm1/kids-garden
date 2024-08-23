@@ -11,6 +11,7 @@ import img4 from '../assets/img4.jpg'
 import img5 from '../assets/img5.jpeg'
 import img6 from '../assets/img6.jpeg'
 import img7 from '../assets/img7.jpg'
+import Level from "../components/LevelSelector"
 
 export default function MainPage(){
     
@@ -49,21 +50,23 @@ export default function MainPage(){
                 <img src={portrait} alt="anuncio" className="rounded-2xl"/>
             </div>
             <div className="flex w-[100%] justify-center items-center mt-[60px] flex-col mb-[30px]">
-                <h1 className="font-ubuntu font-extrabold text-[28px]">Centro Educativo Cristiano</h1>
-                <h1 className="font-ubuntu font-extrabold mt-[-6px] text-[28px]">"Liga de Vida Nueva"</h1>
+                <h1 className="font-ubuntu font-extrabold text-[28px]">Colegio Kids Garden</h1>
+                {/* <h1 className="font-ubuntu font-extrabold mt-[-6px] text-[28px]"></h1> */}
             </div>
             <section className="flex flex-col font-ubuntu w-[100%] items-center">
                 <h2 className="
                 flex
                 text-[20px]
                 ">
-                    Con más de 30 años de experiencia impartiendo educación.
+                    Con más de x años de experiencia impartiendo educación.
                 </h2> 
                 <h2 className="flex mr-auto ml-auto items-center
                 text-[20px]">
-                    Cuenta con profesionales universitarios y personal altamente calificado
+                    Cuenta con profesionales y personal altamente calificado
                     en todas las áreas. 
                 </h2>
+
+                <Level />
                 <div className="
                 flex
                 mt-[60px]
@@ -74,7 +77,6 @@ export default function MainPage(){
                     items-center
                     w-[100%]
                     flex
-                    bg-gray-100
                     ">
                         <div className="flex w-[15%] mt-[30px] items-center justify-end">
                             <FaArrowLeft onClick={handleArrowLeft} className="mr-[10px] size-6 hover:size-7 transition-all duration-200"/>               
@@ -86,7 +88,7 @@ export default function MainPage(){
                             w-[100%]
                             h-[400px]
                             "
-                            src={currentImage} alt="" />
+                            src={currentImage} alt="imagen de colegio kids garden" />
                             <div className="flex mt-[10px] mb-[50px]">
                                 {
                                     imageList.map(i =>(

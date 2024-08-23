@@ -14,6 +14,13 @@ export default {
     },
     animation: {
       'slide': 'slide 1s linear infinite'
+    },
+    gridTemplateColumns: {
+      // Simple 16 column grid
+      '16': 'repeat(2, minmax(45%, 45%))',
+
+      // Complex site-specific column configuration
+      'footer': '200px minmax(900px, 1fr) 100px',
     }
   },
   },
