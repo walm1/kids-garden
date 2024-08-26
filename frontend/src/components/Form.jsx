@@ -105,7 +105,7 @@ export default function Form(){
                     border-solid
                     rounded-2xl
                     active:text-[18px]
-                    hover:bg-gray-200
+                    hover:bg-[#ffc17a]
                     "
                     >Enviar</button>
                 </div>

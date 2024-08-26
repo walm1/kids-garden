@@ -27,7 +27,7 @@ function sendMail(name, tel, email, level){
     }
 
     transporter.sendMail(mailOptions, (err, data)=>{
-        if(error) return {"error": "error al enviar correo"}
+        if(err) return {"error": "error al enviar correo"}, console.log('este es el error', err)
 
         return console.log(data)
     })

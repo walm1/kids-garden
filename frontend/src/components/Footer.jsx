@@ -36,7 +36,12 @@ export default function Footer(){
         //window.open('https://mail.google.com/mail/u/0/?pli=1#inbox?compose=GTvVlcSMTDxFvbhWdZHfltQldjzrksPRHNrLNrhJhNzbTvCVlTKKTcHvpQBldmZdkRRhBrMhwXrXs')
     }
 
+    const getInTouch = () =>{
+        window.open('https://mail.google.com/mail/u/0/#inbox?compose=CllgCJZdBnpgRdrCmGcJwDczPQjTksFvfsxKfTvqKCchBMqShWrRnzsrdzdTFQgdwsjLDzxHnvB')
+    }
+
     return(
+        <>
         <div className='
         flex
         w-[100%]
@@ -67,6 +72,21 @@ export default function Footer(){
                 </div>
             </div>       
         </div>
-        
+        <div className='
+        text-white
+        bg-[#2c9928]
+        flex
+        w-[100%]
+        bottom-0
+        h-[40px]
+        '>
+            <div className='flex  items-center w-[50%] justify-center'>
+                <h1 className='text-[10px]'>&copy; COLEGIO KIDS GARDEN GUATEMALA 2024. TODOS LOS DERECHOS RESERVADOS</h1>
+            </div>
+            <div className='flex items-center justify-center w-[50%]'>
+                <h1 className='text-[11px]'>DESARROLLADO POR: <strong onClick={getInTouch} title='Ir a gmail' className='text-blue-500 hover:underline hover:cursor-pointer'>jsdevelopers21@gmail.com</strong></h1>
+            </div>
+        </div>
+        </>
     )
 }

@@ -24,7 +24,7 @@ app.get('/', (req, res)=>{
     res.send('hola')
 })
 
-app.post('/send-mail', async (req, res)=>{
+app.post('/send-mail', (req, res)=>{
     let name = req.body.name
     let email = req.body.email 
     let tel = req.body.tel 
@@ -32,6 +32,6 @@ app.post('/send-mail', async (req, res)=>{
     if(!name || !email || !tel || !level || name.length == 0 || email.length == 0 
         || tel.length == 0 || level.length == 0) return res.send({"error": "faltan datos por rellenar"})
 
-    const query = await sendMail(name, tel, email, level)
+    const query = sendMail(name, tel, email, level)
     return console.log(query), res.status(200), res.send(query)
 })

@@ -12,6 +12,9 @@ import img5 from '../assets/img5.jpeg'
 import img6 from '../assets/img6.jpeg'
 import img7 from '../assets/img7.jpg'
 import Level from "../components/LevelSelector"
+import TopWelcome from "../components/TopWelcome"
+import AboutUs from "../components/Aboutus"
+import Contact from "../components/Contact"
 
 export default function MainPage(){
     
@@ -46,69 +49,10 @@ export default function MainPage(){
         <>
         <Navbar/>
         <div className="flex flex-col min-h-[100vh] mt-[150px]">
-            <div className="flex justify-center items-center mt-[20px]">
-                <img src={portrait} alt="anuncio" className="rounded-2xl"/>
-            </div>
-            <div className="flex w-[100%] justify-center items-center mt-[60px] flex-col mb-[30px]">
-                <h1 className="font-ubuntu font-extrabold text-[28px]">Colegio Kids Garden</h1>
-                {/* <h1 className="font-ubuntu font-extrabold mt-[-6px] text-[28px]"></h1> */}
-            </div>
-            <section className="flex flex-col font-ubuntu w-[100%] items-center">
-                <h2 className="
-                flex
-                text-[20px]
-                ">
-                    Con más de x años de experiencia impartiendo educación.
-                </h2> 
-                <h2 className="flex mr-auto ml-auto items-center
-                text-[20px]">
-                    Cuenta con profesionales y personal altamente calificado
-                    en todas las áreas. 
-                </h2>
-
-                <Level />
-                <div className="
-                flex
-                mt-[60px]
-                w-[100%]
-                ">
-                    <div className="
-                    justify-center
-                    items-center
-                    w-[100%]
-                    flex
-                    ">
-                        <div className="flex w-[15%] mt-[30px] items-center justify-end">
-                            <FaArrowLeft onClick={handleArrowLeft} className="mr-[10px] size-6 hover:size-7 transition-all duration-200"/>               
-                        </div>
-                        <div className="flex mt-[30px] w-[65%] items-center justify-center flex-col">
-                            <img 
-                            className="
-                            rounded-lg
-                            w-[100%]
-                            h-[400px]
-                            "
-                            src={currentImage} alt="imagen de colegio kids garden" />
-                            <div className="flex mt-[10px] mb-[50px]">
-                                {
-                                    imageList.map(i =>(
-                                        <>
-                                            {
-                                                (i.index - 1) == imageIndex ? 
-                                                <GoDotFill className="size-5"/>
-                                                : <GoDot className="size-5"/>
-                                            }
-                                        </>
-                                    ))
-                                }
-                            </div>
-                        </div>
-                        <div className="flex w-[15%] items-center justify-start mt-[30px]">
-                            <FaArrowRight onClick={handleArrowRight} className="ml-[10px] size-6 hover:size-7  transition-all duration-200"/>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <TopWelcome />
+            <AboutUs />
+            <Contact />
+            <Level />
         </div>
             <Footer />
         </>

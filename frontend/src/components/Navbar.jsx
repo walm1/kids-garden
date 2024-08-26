@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from '../assets/kids_garden_logo.png'
 import {Link, NavLink} from 'react-router-dom'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
@@ -6,6 +6,11 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 export default function Navbar(){
     const [nav, setNav] = useState(false)
     const [over, setOver] = useState(false)
+    const [active, setActive] = useState()
+
+    const handleLinks = ()=>{
+
+    }
 
     const handleNav = ()=>{
         setNav(!nav)
@@ -15,10 +20,17 @@ export default function Navbar(){
         setOver(!over)
     }
 
+
+    useEffect(()=>{
+        const inicio = document.getElementById('inicio')
+        const aboutus = document.getElementById('aboutus')
+    }, [])
+
+
     const navItems = [
-        {id: 1, text: "Inicio", path: "/"},
-        {id: 2, text: "Nosotros", path: "/nosotros"},
-        {id: 3, text: "Contáctanos", path: "/contacto"}
+        {id: 1, text: "Inicio", path: "inicio"},
+        {id: 2, text: "Nosotros", path: "aboutus"},
+        {id: 3, text: "Contáctanos", path: "contact"},
     ]
 
     return(
@@ -28,7 +40,7 @@ export default function Navbar(){
         flex 
         top-0 
         fixed
-        md:h-[150px] 
+        md:h-[130px] 
         h-[110px]
         w-[100%]
         bg-[#2c9928]
@@ -41,7 +53,7 @@ export default function Navbar(){
             items-center
             justify-center
             '>
-                <NavLink to={'/'}>
+                <NavLink>
                 <img src={logo} 
                 alt="logo" className='
                 md:h-[120px]
@@ -64,70 +76,18 @@ export default function Navbar(){
             gap-[40px]
             '>
               {navItems.map(item =>(
-                <NavLink 
+                <button 
                 onMouseOver={over == true ? handleOver : ''}
-                style={({ isActive }) => {
-                    return {
-                      color: isActive ? "#ff951c" : "white",
-                      textDecorationLine: isActive ? 'underline' : 'none',
-                      textDecorationThickness: '1px',
-                      textUnderlineOffset: '6px',
-                    };
-                }}
             className='transition-all
             duration-100
             ease-in-out
             hover:text-[19px]
-            hover:text-[#e9e6e6]' to={item.path} key={item.id} >{item.text}</NavLink>
+            hover:text-[#e9e6e6]' onClick={()=>{
+                document.getElementById(item.path).scrollIntoView({behavior: 'smooth'})
+            }} key={item.id} >{item.text}</button>
               ))}
 
-              <div 
-            onClick={handleOver}
-            className='flex flex-col'>
-                <h1 
-                className='transition-all
-                duration-200
-                ease-in-out
-                hover:text-[19px]
-                hover:text-[#fff]'>
-                    Más
-                </h1>
-                <div onMouseLeave={handleOver} className={over ? 'flex fixed flex-col w-[200px] rounded-xl shadow-2xl mt-[60px] ml-[-150px] bg-[#5aac3f]' : 'hidden'}>
-                <NavLink 
-                to={'/plans'}
-                style={({ isActive }) => {
-                    return {
-                      color: isActive ? "#ff951c" : "white",
-                      textDecorationLine: isActive ? 'underline' : 'none',
-                      textDecorationThickness: '1px',
-                      textUnderlineOffset: '6px',
-                    };
-                }}
-            className='transition-all
-            duration-200
-            p-2
-            ease-in-out
-            hover:text-[18.5px]
-            hover:text-[#e9e6e6]'>Planes de estudio</NavLink>
-            <NavLink 
-                to={'/noticias'}
-                style={({ isActive }) => {
-                    return {
-                      color: isActive ? "#ff951c" : "white",
-                      textDecorationLine: isActive ? 'underline' : 'none',
-                      textDecorationThickness: '1px',
-                      textUnderlineOffset: '6px',
-                    };
-                }}
-            className='transition-all
-            p-2
-            duration-200
-            ease-in-out
-            hover:text-[18.5px]
-            hover:text-[#e9e6e6]'>Noticias</NavLink>
-                </div>
-              </div>
-            </div>
+            </ div >    
 
             <div className='flex md:hidden items-center justify-end w-[85%] mr-[10px]'>
                 {nav ? <AiOutlineClose className='hover:cursor-pointer' onClick={handleNav} color='white' size={40}/> : <AiOutlineMenu className='hover:cursor-pointer' onClick={handleNav} color='white' size={50} />}
@@ -150,7 +110,6 @@ export default function Navbar(){
                                 };
                             }}
                             className={"flex text-white text-xl"}
-                            to={item.path}
                             key={item.id}
                             >
                                 {item.text}
@@ -160,6 +119,20 @@ export default function Navbar(){
                         
                     ))
                 }
+                <div 
+                        className='h-[50px] hover:bg-[#124572] flex gap-6 w-[100%] items-center justify-center'>
+                            <NavLink
+                            style={({ isActive }) => {
+                                return {
+                                  color: isActive ? "rgb(190, 300, 255)" : "white",
+                                };
+                            }}
+                            className={"flex text-white text-xl"}
+                            to={'/noticias'}
+                            >
+                                Noticias
+                            </NavLink>
+                        </div>
                 </div>
               
             </div>
